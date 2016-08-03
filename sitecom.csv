@@ -1,0 +1,431 @@
+WLX-7000 v1 001,Firmware,http://www.sitecomlearningcentre.com/download/firmware/2850,2016-02-25 00:00:00,- Fixed some language issues
+Greyhound v1 001,Firmware 1.2,http://www.sitecomlearningcentre.com/download/firmware/3071,2016-07-27 00:00:00,"- Added more Bandsteering options
+- Modified WiFi drivers for better stability"
+Greyhound v1 001,Firmware 1.1,http://www.sitecomlearningcentre.com/download/firmware/2815,2016-01-27 00:00:00,"- Added more Bandsteering options
+- Modified WiFi drivers for better stability"
+Greyhound v1 001,Original Firmware,http://www.sitecomlearningcentre.com/download/firmware/2805,2016-01-22 00:00:00,"- Added more Bandsteering options
+- Modified WiFi drivers for better stability"
+LN-554 v1 001,LN-554v1-001 Firmware 1.30,http://www.sitecomlearningcentre.com/download/firmware/809,2015-03-02 00:00:00,Firmware 1.30
+LN-555 v1 001,LN-555v1-001 Firmware 1.30,http://www.sitecomlearningcentre.com/download/firmware/815,2015-03-02 00:00:00,Firmware 1.30
+WL-328 v1 001,Firmware 1.3,http://www.sitecomlearningcentre.com/download/firmware/3063,2016-07-22 00:00:00,Fixed MAC address control issue where only MAC addresses starting with '00' were accepted.
+WLM-2600 v1 001,WLM-2600v1-001 Firmware 1.30,http://www.sitecomlearningcentre.com/download/firmware/772,2015-03-02 00:00:00,"WLM-2600 Firmware Fixlist
+
+Firmware 1.30
+
+- Fixed ISP Wizard settings
+- Changed SIP setting to enabled by default
+
+Firmware 1.22
+
+ 
+
+- Fixed WiFi authentication issue
+
+- Fixed DNS security issue
+
+ 
+
+Firmware 1.21
+
+- Various bugfixes and improvements
+
+Firmware 1.20
+
+- Full IPv6 compatibility
+
+- Disable WPS PIN for security issues"
+WLM-3600 v1 001,WLM-3600v1-001 Firmware 1.30,http://www.sitecomlearningcentre.com/download/firmware/779,2015-03-02 00:00:00,"WLM-3600v1-001
+
+Firmware 1.30
+
+- Fixed ISP Wizard settings
+- Changed SIP setting to enabled by default
+
+Firmware 1.23
+
+- Fixed DNS security issue
+
+Firmware 1.21
+
+- Various bugfixes and improvements
+
+Firmware 1.20
+
+- Full IPv6 compatibility
+
+- New Sitecom Cloud Security scan engine
+
+- Disable WPS PIN for security issues"
+WLM-4600 v1 001,WLM-4600v1-001 Firmware 1.40,http://www.sitecomlearningcentre.com/download/firmware/786,2015-03-02 00:00:00,"WLM-4600v1-001
+
+Firmware 1.40
+- Fixed ISP Wizard settings
+- Changed SIP setting to enabled by default
+
+Firmware 1.22
+
+- Fixed WiFi authentication issue
+
+- Fixed DNS security issue
+
+Firmware 1.21
+
+- Various bugfixes and improvements
+
+Firmware 1.20
+
+- Full IPv6 compatibility
+
+- New Sitecom Cloud Security scan engine
+
+- Disable WPS PIN for security issues"
+WLM-5600 v1 001,WLM-5600v1-001 Firmware 1.40,http://www.sitecomlearningcentre.com/download/firmware/794,2015-03-02 00:00:00,"WLM-5600v1-001
+
+Firmware 1.40
+- Fixed ISP Wizard settings
+- Changed SIP setting to enabled by default
+
+Firmware 1.23
+
+- Fixed WiFi authentication issue
+
+- Fixed DNS security issue
+
+Firmware 1.22
+- Wifi stability improvements
+
+- Increased security
+
+- IPv6 static routing
+
+- QoS improvements
+
+Firmware 1.21
+
+- Various bugfixes and improvements
+
+Firmware 1.20
+
+- Full IPv6 compatibility
+
+- New Sitecom Cloud Security scan engine
+
+- Disable WPS PIN for security issues"
+WLM-6600 v1 001,WLM-6600v1-001 Firmware 1.30,http://www.sitecomlearningcentre.com/download/firmware/800,2015-03-02 00:00:00,"WLM-6600 v1-001
+
+Firmware 1.30
+- Fixed ISP Wizard settings
+- Changed SIP setting to enabled by default
+
+Firmware 1.14
+
+- Fixed WiFi performace issue
+
+Firmware 1.13
+
+- Fixed WiFi authentication issue
+
+- Fixed DNS security issue
+
+Firmware 1.12
+
+- Wifi stability improvements
+
+- Increased security
+
+- IPv6 static routing
+
+- QoS improvements
+
+Firmware 1.11
+
+- Various bugfixes and improvements
+
+Firmware 1.10
+
+- Full IPv6 compatibility
+
+- New Sitecom Cloud Security scan engine
+
+- Disable WPS PIN for security issues"
+WLR-3100 v2 003,Firmware 1.3,http://www.sitecomlearningcentre.com/download/firmware/2691,2016-01-18 00:00:00,"Changed:
+
+
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+	Show the guest network client on DHCP table on web and app agent
+
+
+Fixed:
+
+
+	Ignore DHCP-PD check when use IPv6 Static/6RD type of connection
+	Fix IPv4 PPTP/L2TP hostname set/get error on app agent
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-4002B v1 001,Firmware 1.1,http://www.sitecomlearningcentre.com/download/firmware/876,2015-04-14 00:00:00,Firmware 1.1
+WLR-4004 v1 002,Firmware 1.04,http://www.sitecomlearningcentre.com/download/firmware/2674,2016-01-13 00:00:00,"- Improved stability and possibly higher data throughput of the WiFi signal in crowded 2.4GHZ environments. This is achieved by automatically dropping the channel width to 20MHz of other 20MHz signals are detected in the environment.
+- A 'Check for updates' button is added on the firmware update page. This can be used to manually check for firmware updates on the Sitecom servers. An automatic check is done once a week. When an update is found, a pop-up will be shown in the user interface.
+- 2 messages regarding the automatic firmware update function are added in the system log: 'New firmware detected' and 'No new firmware detected, new check in xxxxx seconds'. When a new firmware is detected, a special update page will be shown where the update can be performed.
+- On the startpage of the webinterface, the versionnumber is added to the modelnumber.
+- Userinterface login issue with the Microsoft Edge browser is fixed."
+WLR-4004 v1 002,Firmware 1.0,http://www.sitecomlearningcentre.com/download/firmware/2501,2015-05-13 00:00:00,"- Improved stability and possibly higher data throughput of the WiFi signal in crowded 2.4GHZ environments. This is achieved by automatically dropping the channel width to 20MHz of other 20MHz signals are detected in the environment.
+- A 'Check for updates' button is added on the firmware update page. This can be used to manually check for firmware updates on the Sitecom servers. An automatic check is done once a week. When an update is found, a pop-up will be shown in the user interface.
+- 2 messages regarding the automatic firmware update function are added in the system log: 'New firmware detected' and 'No new firmware detected, new check in xxxxx seconds'. When a new firmware is detected, a special update page will be shown where the update can be performed.
+- On the startpage of the webinterface, the versionnumber is added to the modelnumber.
+- Userinterface login issue with the Microsoft Edge browser is fixed."
+WLR-4004 v1 002,Firmware 1.03,http://www.sitecomlearningcentre.com/download/firmware/2509,2015-05-13 00:00:00,"- Improved stability and possibly higher data throughput of the WiFi signal in crowded 2.4GHZ environments. This is achieved by automatically dropping the channel width to 20MHz of other 20MHz signals are detected in the environment.
+- A 'Check for updates' button is added on the firmware update page. This can be used to manually check for firmware updates on the Sitecom servers. An automatic check is done once a week. When an update is found, a pop-up will be shown in the user interface.
+- 2 messages regarding the automatic firmware update function are added in the system log: 'New firmware detected' and 'No new firmware detected, new check in xxxxx seconds'. When a new firmware is detected, a special update page will be shown where the update can be performed.
+- On the startpage of the webinterface, the versionnumber is added to the modelnumber.
+- Userinterface login issue with the Microsoft Edge browser is fixed."
+WLR-4004 v1 003,Firmware 1.04,http://www.sitecomlearningcentre.com/download/firmware/2763,2016-01-20 00:00:00,"- Improved stability and possibly higher data throughput of the WiFi signal in crowded 2.4GHZ environments. This is achieved by automatically dropping the channel width to 20MHz of other 20MHz signals are detected in the environment.
+- A 'Check for updates' button is added on the firmware update page. This can be used to manually check for firmware updates on the Sitecom servers. An automatic check is done once a week. When an update is found, a pop-up will be shown in the user interface.
+- 2 messages regarding the automatic firmware update function are added in the system log: 'New firmware detected' and 'No new firmware detected, new check in xxxxx seconds'. When a new firmware is detected, a special update page will be shown where the update can be performed.
+- On the startpage of the webinterface, the versionnumber is added to the modelnumber.
+- Userinterface login issue with the Microsoft Edge browser is fixed."
+WLR-4004 v1 003,Firmware 1.0,http://www.sitecomlearningcentre.com/download/firmware/2529,2015-05-13 00:00:00,"- Improved stability and possibly higher data throughput of the WiFi signal in crowded 2.4GHZ environments. This is achieved by automatically dropping the channel width to 20MHz of other 20MHz signals are detected in the environment.
+- A 'Check for updates' button is added on the firmware update page. This can be used to manually check for firmware updates on the Sitecom servers. An automatic check is done once a week. When an update is found, a pop-up will be shown in the user interface.
+- 2 messages regarding the automatic firmware update function are added in the system log: 'New firmware detected' and 'No new firmware detected, new check in xxxxx seconds'. When a new firmware is detected, a special update page will be shown where the update can be performed.
+- On the startpage of the webinterface, the versionnumber is added to the modelnumber.
+- Userinterface login issue with the Microsoft Edge browser is fixed."
+WLR-4004 v1 003,Firmware 1.03,http://www.sitecomlearningcentre.com/download/firmware/2537,2015-05-13 00:00:00,"- Improved stability and possibly higher data throughput of the WiFi signal in crowded 2.4GHZ environments. This is achieved by automatically dropping the channel width to 20MHz of other 20MHz signals are detected in the environment.
+- A 'Check for updates' button is added on the firmware update page. This can be used to manually check for firmware updates on the Sitecom servers. An automatic check is done once a week. When an update is found, a pop-up will be shown in the user interface.
+- 2 messages regarding the automatic firmware update function are added in the system log: 'New firmware detected' and 'No new firmware detected, new check in xxxxx seconds'. When a new firmware is detected, a special update page will be shown where the update can be performed.
+- On the startpage of the webinterface, the versionnumber is added to the modelnumber.
+- Userinterface login issue with the Microsoft Edge browser is fixed."
+WLR-4100OEM v1 001,WLR-4100 OEM Firmware 2.2,http://www.sitecomlearningcentre.com/download/firmware/753,2015-02-27 00:00:00,"WLR-4100 OEM
+
+Firmware 2.2
+
+- Fixes some IPv6 PPPoE configuration issues
+- Fixes some bugs in the web interface"
+WLR-4100 v1 001,Firmware,http://www.sitecomlearningcentre.com/download/firmware/2699,2016-01-18 00:00:00,"Changed:
+
+
+	Show the guest network client on DHCP table on web and app agent
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Fix IPv4 PPTP/L2TP hostname set/get error on app agent
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-4100 v1 001,Firmware 3.0,http://www.sitecomlearningcentre.com/download/firmware/656,2015-02-27 00:00:00,"Changed:
+
+
+	Show the guest network client on DHCP table on web and app agent
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Fix IPv4 PPTP/L2TP hostname set/get error on app agent
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-4100 v1 002,Firmware 2.7,http://www.sitecomlearningcentre.com/download/firmware/2707,2016-01-18 00:00:00,"Changed:
+
+1. Add timeout to check DNS alive
+
+2. Add procedure to verify ipv4 and ipv6 on ppp session
+
+Fixed:
+
+1. Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-4100 v1 002,Firmware 1.4,http://www.sitecomlearningcentre.com/download/firmware/674,2015-02-27 00:00:00,"Changed:
+
+1. Add timeout to check DNS alive
+
+2. Add procedure to verify ipv4 and ipv6 on ppp session
+
+Fixed:
+
+1. Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-4100 v1 003,Firmware 2.7,http://www.sitecomlearningcentre.com/download/firmware/2842,2016-01-18 00:00:00,"Changed:
+
+1. Add timeout to check DNS alive
+
+2. Add procedure to verify ipv4 and ipv6 on ppp session
+
+Fixed:
+
+1. Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-5002 v1 001,Firmware 1.01,http://www.sitecomlearningcentre.com/download/firmware/3079,2016-07-28 00:00:00,"- Fix login issue, can not login via Win8.1+IE11+Metro mode.
+- Fix Apple Airprint connection issue."
+WLR-5002 v2 001,Original Firmware,http://www.sitecomlearningcentre.com/download/firmware/3103,2015-07-04 00:00:00,Original Firmware
+WLR-5100 v1 001,Firmware 3.0,http://www.sitecomlearningcentre.com/download/firmware/702,2015-02-27 00:00:00,"WLR-5100v1-001
+
+Firmware 3.0
+
+(1)    Added support for Mobile App
+
+Firmware 2.1
+
+(1)    Guest Network functionality
+(2)    Auto LAN IP Change detection
+(3)    Replace domain name to ""sitecom.router""
+(4)    Multi Wan Port Bridge in Russia L2TP mode.
+(5)    IPv6 support
+(6)    IPv6 with latest utmproxy
+(7)    Disable WPS PIN code functionality
+
+Note: Because of the changed functionality it is necessary to reset the router to factory defaults after the firmware upgrade!"
+WLR-5100 v1 002,Firmware 1.4,http://www.sitecomlearningcentre.com/download/firmware/2723,2016-01-18 00:00:00,"Changed:
+
+
+	Show the guest network client on web and app agent
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Ignore DHCP-PD check when use IPv6 Static/6RD type of connection
+	Fix IPv4 PPTP/L2TP hostname set/get error on app agent
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-5100 v1 002,Firmware 1.2,http://www.sitecomlearningcentre.com/download/firmware/728,2015-02-27 00:00:00,"Changed:
+
+
+	Show the guest network client on web and app agent
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Ignore DHCP-PD check when use IPv6 Static/6RD type of connection
+	Fix IPv4 PPTP/L2TP hostname set/get error on app agent
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-6100 v1 001,Firmware 2.11,http://www.sitecomlearningcentre.com/download/firmware/2731,2016-01-18 00:00:00,"Changed:
+
+
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	fix USB2 get function on app agent
+	Ignore DHCP-PD check when use IPv6 Static/6RD type of connection
+	Fix IPv4 PPTP/L2TP hostname set/get error on app agent
+	show the guest network client on DHCP table on web and app agent
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-6100 v1 001,Firmware 2.10,http://www.sitecomlearningcentre.com/download/firmware/646,2015-02-27 00:00:00,"Changed:
+
+
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	fix USB2 get function on app agent
+	Ignore DHCP-PD check when use IPv6 Static/6RD type of connection
+	Fix IPv4 PPTP/L2TP hostname set/get error on app agent
+	show the guest network client on DHCP table on web and app agent
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-7100 v1 001,Firmware 1.8,http://www.sitecomlearningcentre.com/download/firmware/2739,2016-01-18 00:00:00,"Changed:
+
+
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Fix security issue of NetUSB
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-7100 v1 001,Firmware 1.5,http://www.sitecomlearningcentre.com/download/firmware/626,2015-02-19 00:00:00,"Changed:
+
+
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Fix security issue of NetUSB
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-7100 v1 002,Firmware 1.8,http://www.sitecomlearningcentre.com/download/firmware/2796,2016-01-18 00:00:00,"Changed:
+
+
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Fix security issue of NetUSB
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-8100 v1 001,Firmware 2.6,http://www.sitecomlearningcentre.com/download/firmware/2747,2016-01-18 00:00:00,"Changed:
+
+
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Fix security issue of NetUSB
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-8100 v1 001,Firmware 2.4,http://www.sitecomlearningcentre.com/download/firmware/2658,2015-11-11 00:00:00,"Changed:
+
+
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Fix security issue of NetUSB
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-8100 v1 001,Firmware 2.1,http://www.sitecomlearningcentre.com/download/firmware/611,2015-02-19 00:00:00,"Changed:
+
+
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Fix security issue of NetUSB
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-8100 v1 002,Firmware 2.6,http://www.sitecomlearningcentre.com/download/firmware/2755,2016-01-18 00:00:00,"Changed:
+
+
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Fix security issue of NetUSB
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLR-8100 v1 002,Firmware 2.4,http://www.sitecomlearningcentre.com/download/firmware/2666,2015-10-01 00:00:00,"Changed:
+
+
+	Add timeout to check DNS alive
+	Add procedure to verify ipv4 and ipv6 on ppp session
+
+
+Fixed:
+
+
+	Fix security issue of NetUSB
+	Fixed Apple iOS 9 login issue with the MyWiFi app."
+WLX-1000 v1 001,WLX-1000v1-001 Firmware 1.0,http://www.sitecomlearningcentre.com/download/firmware/827,2015-03-02 00:00:00,Firmware 1.0
+WLX-2005 v1 001,WLX-2005v1-001 Firmware 1.4,http://www.sitecomlearningcentre.com/download/firmware/837,2015-03-02 00:00:00,Firmware 1.4
+WLX-2006 v1 001,WLX-2006v1-001 Firmware 1.5,http://www.sitecomlearningcentre.com/download/firmware/845,2015-03-02 00:00:00,Firmware 1.5
+WLX-5000 v1 001,WLX-5000v1-001 Firmware 1.6,http://www.sitecomlearningcentre.com/download/firmware/851,2015-03-02 00:00:00,Firmware 1.6
+WLX-5100 v1 001,WLX-5100v1-001 Firmware 1.06,http://www.sitecomlearningcentre.com/download/firmware/861,2015-03-02 00:00:00,Firmware 1.06
+WLX-7000 v1 001,Firmware,http://www.sitecomlearningcentre.com/download/firmware/2850,2016-02-25 00:00:00,- Fixed some language issues

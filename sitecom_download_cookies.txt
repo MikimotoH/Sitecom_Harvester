@@ -1,0 +1,10 @@
+[0] curl 
+--header "Host: www.sitecomlearningcentre.com" 
+--header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.82 Safari/537.36" 
+--header "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" 
+--header "Accept-Language: en-US,en;q=0.8,zh-TW;q=0.6,zh;q=0.4,zh-CN;q=0.2" 
+--header "Cookie: __utma=88931097.1640252130.1469979130.1469979130.1469979130.1; __utmz=88931097.1469979130.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); PHPSESSID=c3re8s6ckbva3jno3s71578e92; country=tw" 
+--header "Connection: keep-alive" 
+"http://www.sitecomlearningcentre.com/download/driver/3547" 
+-o "CB-001v1001-driver-vv1001.zip" -L
+
