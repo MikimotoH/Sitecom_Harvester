@@ -3,8 +3,73 @@
 --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.82 Safari/537.36" 
 --header "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" 
 --header "Accept-Language: en-US,en;q=0.8,zh-TW;q=0.6,zh;q=0.4,zh-CN;q=0.2" 
---header "Cookie: __utma=88931097.1640252130.1469979130.1469979130.1469979130.1; __utmz=88931097.1469979130.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); PHPSESSID=c3re8s6ckbva3jno3s71578e92; country=tw" 
+--header "Cookie: __utma=88931097.1640252130.1469979130.1469979130.1469979130.1; "\
+                  "__utmz=88931097.1469979130.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); "\
+                  "PHPSESSID=c3re8s6ckbva3jno3s71578e92; "\
+                  "country=tw" 
 --header "Connection: keep-alive" 
 "http://www.sitecomlearningcentre.com/download/driver/3547" 
 -o "CB-001v1001-driver-vv1001.zip" -L
 
+
+cookies = driver.get_cookies()
+"""
+[
+ {'domain': '.sitecomlearningcentre.com',
+  'expires': 'Fri, 03 Aug 2018 08:57:59 GMT',
+  'expiry': 1533286679,
+  'httponly': False,
+  'name': '__utma',
+  'path': '/',
+  'secure': False,
+  'value': '88931097.1714046551.1470214679.1470214679.1470214679.1'},
+ {'domain': '.sitecomlearningcentre.com',
+  'expires': 'Wed, 01 Feb 2017 20:57:59 GMT',
+  'expiry': 1485982679,
+  'httponly': False,
+  'name': '__utmz',
+  'path': '/',
+  'secure': False,
+  'value': '88931097.1470214679.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)'},
+ {'domain': '.sitecomlearningcentre.com',
+  'httponly': False,
+  'name': '__utmc',
+  'path': '/',
+  'secure': False,
+  'value': '88931097'},
+ {'domain': '.sitecomlearningcentre.com',
+  'expires': 'Wed, 03 Aug 2016 09:27:59 GMT',
+  'expiry': 1470216479,
+  'httponly': False,
+  'name': '__utmb',
+  'path': '/',
+  'secure': False,
+  'value': '88931097.2.10.1470214679'},
+ {'domain': '.sitecomlearningcentre.com',
+  'expires': 'Wed, 03 Aug 2016 09:07:59 GMT',
+  'expiry': 1470215279,
+  'httponly': False,
+  'name': '__utmt',
+  'path': '/',
+  'secure': False,
+  'value': '1'},
+ {'domain': 'www.sitecomlearningcentre.com',
+  'httponly': False,
+  'name': 'PHPSESSID',
+  'path': '/',
+  'secure': False,
+  'value': 'h9mb4h4l4msdk1qhsqaan87090'}
+ {'domain': 'www.sitecomlearningcentre.com',
+  'httponly': False,
+  'name': 'country',
+  'path': '/',
+  'secure': False,
+  'value': 'us'},
+]
+"""
+
+
+```python
+"Cookie: " + "; ".join( _['name']+"="+_['value'] for _ in cookies )
+
+```
