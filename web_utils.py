@@ -3,7 +3,6 @@ from collections import OrderedDict
 from urllib import request, parse
 import urllib
 
-
 def firefox_url_req(url: str) -> request.Request:
     headers = OrderedDict([
         ('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0'),
@@ -16,25 +15,26 @@ def firefox_url_req(url: str) -> request.Request:
     ])
     return request.Request(url, headers=headers)
 
-"""
-def get_http_resp_content(url:str) -> str:
-    req = firefox_url_req(url)
-    with request.urlopen(req) as fin:
-        content_encoding = fin.info().get("Content-Encoding").lower().strip()
-        content_type = fin.info().get("Content-Type")
-        content_charset = next(( _ for _ in content_type.split(';') if _.startswith("charset=")),
-                                "charset=UTF-8" )
-        content_charset = content_charset.split(sep='=', maxsplit=1)[1]
-        if 'gzip' in content_encoding:
-            from io import BytesIO
-            import gzip
-            gzdata = BytesIO(fin.readall())
-            gzfile = gzip.GzipFile(fileobj=gzdata)
-            data = gzfile.read()
-        else:
-            data = fin.readall()
-        return data.decode(content_charset)
-"""
+
+def cookie_friendly_download(referer_url, file_url, store_dir='.', timeout=1000):
+    from http.cookiejar import CookieJar
+    from urllib import request
+    cj = CookieJar()
+    cp = request.HTTPCookieProcessor(cj)
+    opener = request.build_opener(cp)
+    with opener.open(referer_url) as fin:
+        fin.headers.items()
+    import os
+    with opener.open(file_url, timeout=timeout) as fin:
+        file_bin = fin.read()
+        filename = fin.headers['Content-Disposition']
+        filename = filename.split(';')[-1].split('=')[1]
+        os.makedirs(store_dir, exist_ok=True)
+        with open(os.path.join(store_dir, filename), mode='wb') as fout:
+            fout.write(file_bin)
+            return os.path.join(store_dir, filename)
+
+
 
 def get_http_resp_content(url:str) -> str:
     data, content_charset, _ =  get_http_resp_content_bin(url)
