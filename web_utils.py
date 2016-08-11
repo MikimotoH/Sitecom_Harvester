@@ -3,6 +3,7 @@ from collections import OrderedDict
 from urllib import request, parse
 import urllib
 
+
 def firefox_url_req(url: str) -> request.Request:
     headers = OrderedDict([
         ('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0'),
@@ -37,7 +38,7 @@ def cookie_friendly_download(referer_url, file_url, store_dir='.', timeout=1000)
 
 
 def get_http_resp_content(url:str) -> str:
-    data, content_charset, _ =  get_http_resp_content_bin(url)
+    data, content_charset, _ = get_http_resp_content_bin(url)
     if not data:
         return ""
     return data.decode(content_charset)
@@ -53,8 +54,8 @@ def get_http_resp_content_bin(url:str) -> (bytes, str, str):
         with request.urlopen(req) as resp:
             content_encoding = resp.info().get("Content-Encoding", failobj="").lower().strip()
             content_type = resp.info().get("Content-Type", failobj="")
-            content_charset = next(( _ for _ in content_type.split(';') if _.startswith("charset=")),
-                                    "charset=UTF-8" )
+            content_charset = next((_ for _ in content_type.split(';') if _.startswith("charset=")),
+                                   "charset=UTF-8")
             content_charset = content_charset.split(sep='=', maxsplit=1)[1]
             if 'gzip' in content_encoding:
                 from io import BytesIO
@@ -70,6 +71,7 @@ def get_http_resp_content_bin(url:str) -> (bytes, str, str):
         print(ex)
         return None,None,None
 
+
 def urlFileName(url:str)->str:
     from os import path
     r = path.basename(parse.urlsplit(url).path)
@@ -83,12 +85,14 @@ def urlFileName(url:str)->str:
 class MyHTTPRedirectHandler(urllib.request.HTTPRedirectHandler):
     def __init__(self):
         self.location = ""
+
     def http_error_302(self, req, fp, code, msg, headers):
         """store "Location" HTTP response header
         :return: http
         """
         self.location = headers.get('Location', '')
         uprint("headers['Location']=" + self.location)
+
         def squote(s):
             return urllib.parse.quote(s, ';/?:&=+,$[]%^')
         try:
@@ -107,7 +111,7 @@ class MyHTTPRedirectHandler(urllib.request.HTTPRedirectHandler):
 
 
 def downloadFile(url:str, fname:str, timeOut:int=10, chunkSize:int=2*1024*1024,
-        timeOutInterval:int=3):
+                 timeOutInterval:int=3):
     """ download file from url to fname (abspath)
         Keyword arguments:
         url -- source url from where to download
@@ -122,7 +126,7 @@ def downloadFile(url:str, fname:str, timeOut:int=10, chunkSize:int=2*1024*1024,
     while True:
         try:
             with request.urlopen(firefox_url_req(url),
-                timeout=timeOut) as resp:
+                                 timeout=timeOut) as resp:
                 uprint("resp_headers=%s"%(resp.info().items()))
                 with open(fname+".part", mode='wb') as fout:
                     while True:
@@ -136,17 +140,18 @@ def downloadFile(url:str, fname:str, timeOut:int=10, chunkSize:int=2*1024*1024,
                         fout.write(data)
                         fout.flush()
                 import pdb; pdb.set_trace()
-        except socket.timeout as ex:
+        except socket.timeout:
             print('socket.timeout, sleep %d seconds'%timeOutInterval)
             import time
             time.sleep(timeOutInterval)
+
 
 def safeUrl(url:str)->str:
     from urllib import parse
     pr = parse.urlparse(url)
     pr2 = parse.ParseResult(scheme=pr.scheme, netloc=pr.netloc,
-            path=parse.quote(pr.path,'/%'), params=pr.params,
-            query=pr.query, fragment=pr.fragment)
+                            path=parse.quote(pr.path,'/%'), params=pr.params,
+                            query=pr.query, fragment=pr.fragment)
     return parse.urlunparse(pr2)
 
 
@@ -157,6 +162,7 @@ def safeFileName(name:str)->str:
     bb =re.compile(r"[a-z0-9\-_.]",flags=re.IGNORECASE)
     return ''.join(_ if bb.match(_) else pq(_) for _ in name)
 
+
 def uprint(msg:str):
     import sys
     sys.stdout.buffer.write((msg+'\n').encode('utf8'))
@@ -164,8 +170,11 @@ def uprint(msg:str):
 
 def getFileSha1(fileName)->str:
     import hashlib
-    def sha1(data)->str:
-        return hashlib.sha1(data).hexdigest()
     with open(fileName,mode='rb') as fin:
-        data = fin.read()
-        return sha1(data)
+        return hashlib.sha1(fin.read()).hexdigest()
+
+
+def getFileMd5(fileName)->str:
+    import hashlib
+    with open(fileName,mode='rb') as fin:
+        return hashlib.md5(fin.read()).hexdigest()
