@@ -6,7 +6,7 @@ import os
 import sys
 from pyquery import PyQuery as pq
 import sqlite3
-from web_utils import safeFileName, getFileSha1
+from web_utils import safeFileName, getFileSha1, getFileMd5
 from web_utils import cookie_friendly_download
 from my_utils import uprint
 import re
@@ -76,6 +76,7 @@ def parse_download_page(page_url):
         # 'Version number\r: 2.11'
         fw_ver = fw_ver.split('\r')[-1].strip(': ')
         # '2.11'
+        fw_ver = re.search(r'\d+(\.\d+)*', fw_ver).group(0)
 
         fw_desc = d('.download-item div')[0].text_content().strip()
         # 'Changed:\n\n\n\tAdd timeout to check DNS alive\n\tAdd procedure to
@@ -110,7 +111,6 @@ def parse_download_page(page_url):
             ":fw_date,:fw_ver,:fw_desc,"
             ":local_file_path,:file_sha1,:file_size,"
             ":page_url,:fw_url,:trailStr)",locals())
-
 
 
 def main():
