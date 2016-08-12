@@ -1,10 +1,10 @@
 # coding: utf-8
-from collections import OrderedDict
 from urllib import request, parse
 import urllib
 
 
 def firefox_url_req(url: str) -> request.Request:
+    from collections import OrderedDict
     headers = OrderedDict([
         ('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0'),
         ('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'),
@@ -26,15 +26,15 @@ def cookie_friendly_download(referer_url, file_url, store_dir='.', timeout=1000)
     with opener.open(referer_url) as fin:
         fin.headers.items()
     import os
+    from os import path
     with opener.open(file_url, timeout=timeout) as fin:
         file_bin = fin.read()
         filename = fin.headers['Content-Disposition']
         filename = filename.split(';')[-1].split('=')[1]
         os.makedirs(store_dir, exist_ok=True)
-        with open(os.path.join(store_dir, filename), mode='wb') as fout:
+        with open(path.join(store_dir, filename), mode='wb') as fout:
             fout.write(file_bin)
-            return os.path.join(store_dir, filename)
-
+            return path.join(store_dir, filename)
 
 
 def get_http_resp_content(url:str) -> str:
@@ -42,7 +42,6 @@ def get_http_resp_content(url:str) -> str:
     if not data:
         return ""
     return data.decode(content_charset)
-
 
 
 def get_http_resp_content_bin(url:str) -> (bytes, str, str):

@@ -5,7 +5,6 @@ from os import path
 import os
 import sys
 from pyquery import PyQuery as pq
-import sqlite3
 from web_utils import safeFileName, getFileSha1, getFileMd5
 from web_utils import cookie_friendly_download
 from my_utils import uprint
@@ -14,7 +13,7 @@ import urllib
 import ipdb
 import traceback
 
-conn=None
+
 store_dir=('./output/sitecom/')
 os.makedirs(store_dir, exist_ok=True)
 startTrail=[]
@@ -29,21 +28,19 @@ def getStartIdx():
         return 0
 
 
-def sql(query:str, var=None):
-    global conn
-    csr=conn.cursor()
+def psql(query:str, var=None):
+    import psycopg2
+    db2=psycopg2.connect(database='firmware', user='firmadyne',
+                         password='firmadyne', host='127.0.0.1')
+    cur = db2.cursor()
     try:
-        if var:
-            rows = csr.execute(query,var)
-        else:
-            rows = csr.execute(query)
+        cur.execute(query,var)
         if not query.startswith('SELECT'):
-            conn.commit()
-        if query.startswith('SELECT'):
-            return rows.fetchall()
-        else:
+            db2.commit()
             return
-    except sqlite3.Error as ex:
+        else:
+            return rows.fetchall()
+    except psyconpg2.Error as ex:
         print(ex, file=sys.stderr)
         raise ex
 
@@ -51,9 +48,9 @@ def sql(query:str, var=None):
 def parse_download_page(page_url):
     global prevTrail
     d = pq(url=page_url)
-    brand='Sitecom'; revision=''; trailStr=''
+    trailStr=''
     try:
-        pname = d('h1.product-name')[0].text_content().strip()
+        d('h1.product-name')[0].text_content().strip()
     except IndexError:
         print('%s does NOT exist'%page_url)
         return
@@ -66,11 +63,11 @@ def parse_download_page(page_url):
         if 'firmware' not in title.lower():
             continue
 
-        fw_date = item.cssselect('small')[0].text_content()
+        rel_date = item.cssselect('small')[0].text_content()
         # 'Publication date \r: 18 January 2016'
-        fw_date = fw_date.split('\r')[1].strip(': ')
+        rel_date = rel_date.split('\r')[1].strip(': ')
         # '18 January 2016'
-        fw_date = datetime.strptime(fw_date, '%d %B %Y')
+        rel_date = datetime.strptime(rel_date, '%d %B %Y')
 
         fw_ver = item.cssselect('.download-text-title')[0].text_content()
         # 'Version number\r: 2.11'
@@ -97,44 +94,30 @@ def parse_download_page(page_url):
             ipdb.set_trace()
             traceback.print_exc()
             continue
-        file_sha1=getFileSha1(local_file_path)
-        file_size=path.getsize(local_file_path)
+        file_sha1 = getFileSha1(local_file_path)
+        file_md5 = getFileMd5(local_file_path)
+        file_size = path.getsize(local_file_path)
         uprint('file_path="%s", file_size=%s, file_sha1=%s'%(local_file_path, file_size, file_sha1))
 
-        trailStr=str(prevTrail+[idx])
-        sql("INSERT OR REPLACE INTO TFiles"
-            "( brand, model, revision,"
-            " fw_date, fw_ver, fw_desc, "
-            " file_name, file_sha1, file_size, "
-            "page_url,file_url,tree_trail) VALUES"
-            "(:brand,:model,:revision,"
-            ":fw_date,:fw_ver,:fw_desc,"
-            ":local_file_path,:file_sha1,:file_size,"
-            ":page_url,:fw_url,:trailStr)",locals())
+        trailStr = str(prevTrail+[idx])
+        psql("INSERT INTO image"
+             "(brand, model,"
+             " rel_date, version, description,"
+             " filename, file_sha1, hash, file_size,"
+             " page_url, file_url, tree_trail) VALUES"
+             "(    %s,   %s, "
+             "       %s,      %s,          %s,"
+             "       %s,        %s,   %s,        %s,"
+             "       %s,       %s,         %s)",
+             ('Sitecom', model,
+              rel_date, fw_ver, fw_desc,
+              local_file_path, file_sha1, file_md5, file_size,
+              page_url, fw_url, trailStr))
 
 
 def main():
-    global conn, startTrail, prevTrail
+    global startTrail, prevTrail
     startTrail = [int(re.search(r'\d+', _).group(0)) for _ in sys.argv[1:]]
-    conn=sqlite3.connect('sitecom.sqlite3')
-    sql(
-        "CREATE TABLE IF NOT EXISTS TFiles("
-        "id INTEGER NOT NULL,"
-        "brand TEXT,"
-        "model TEXT,"
-        "revision TEXT,"
-        "fw_date DATE,"
-        "fw_ver TEXT,"
-        "fw_desc TEXT,"
-        "file_name TEXT,"
-        "file_size INTEGER,"
-        "page_url TEXT,"
-        "file_url TEXT,"
-        "tree_trail TEXT,"
-        "file_sha1 TEXT,"
-        "PRIMARY KEY (id)"
-        "UNIQUE(model,revision,file_name)"
-        ");")
 
     d = pq(url='http://www.sitecomlearningcentre.com/')
     model_urls = sorted(list(set(_ for _ in [_.attrib['href'] for _ in d('ul#product-select a')] if _!='#')))

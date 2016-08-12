@@ -73,3 +73,32 @@ cookies = driver.get_cookies()
 "Cookie: " + "; ".join( _['name']+"="+_['value'] for _ in cookies )
 
 ```
+
+http://www.sitecomlearningcentre.com/download/firmware/861
+
+GET /download/firmware/861 HTTP/1.1
+Host: www.sitecomlearningcentre.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:48.0) Gecko/20100101 Firefox/48.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.sitecomlearningcentre.com/products/wlx-5100v1001/wi-fi-range-extender-dualband-ac750/downloads
+Cookie: __utma=88931097.1449547333.1470635584.1470644182.1470971075.3; __utmz=88931097.1470635584.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); PHPSESSID=54ctc1ijit1dnnqaknui7q13r0; country=tw; __utmb=88931097.8.9.1470971105064; __utmc=88931097; __utmt=1
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+HTTP/1.1 200 OK
+Date: Fri, 12 Aug 2016 03:04:57 GMT
+Server: Apache/2.2.22 (Debian)
+X-Powered-By: PHP/5.3.3-7+squeeze19
+Expires: 0
+Cache-Control: max-age=0, no-store
+Pragma: no-cache
+Content-Description: File Transfer
+Content-Disposition: attachment; filename=WLX-5100v1001-firmware-vFirmware-106.zip
+Content-Length: 3317695
+Download-Referer: Sitecom-Support
+Keep-Alive: timeout=30, max=9989
+Connection: Keep-Alive
+Content-Type: application/octet-stream
+
